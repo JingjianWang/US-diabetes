@@ -1,0 +1,35 @@
+---
+title: "US diabetes"
+author: "Jingjian Wang"
+date: '2022-09-07'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# for reading csv file
+library(readr) 
+
+# for data management
+library(dplyr) 
+
+# for coding
+library(tidyverse) 
+
+
+```
+
+```{r}
+# import dataset
+USdiabetes<-read_csv("https://raw.githubusercontent.com/JingjianWang/US-diabetes/main/DiabetesAtlasData.csv")
+```
+
+
+```{r}
+USdiabetes <- USdiabetes %>%
+  arrange(desc(`Diagnosed Diabetes Percentage`))
+```
+
